@@ -93,7 +93,19 @@ c. Make sure to provide Editor access to the client-email.
 ### <a name="step5"></a> Step 5. Execute the Python code
 
 ### <a name="step6"></a> Step 6. Schedule Python code to run recurrently
+The steps we have taken so far would not be very beneficial until code is executed recurrently in automated way. For this I have used Google Cloud Platform however all enterprise Cloud platforms provide this capability.
+
+For GCP, I have used Cloud Functions to deploy Python script on cloud, Cloud Scheduler to run a job recurrently and Pub-Sub to act as mediator between Functions and Scheduler.
+
+Here are [detailed steps on scheduling Python script using GCP](https://github.com/pierian-co/execute-python-script-recurrently-gcp)
+
+You'd need three files:
+1. main.py - Python script
+2. requirements.txt - To declare dependencies
+3. Service Account JSON - The JSON file downloaded as part of [Step 3](#step3)
 
 ### <a name="step7"></a> Step 7. Visualise data using Google Data Studio
+Google Data Studio has in-built connector to Google Sheets which makes visualisation much easier.
 
 ### <a name="step8"></a> Step 8. Share the CWV-Data GoogleSheet and Data Studio Visualisation
+Now you have the data in GoogleSheets and Data Studio, you can share it further with other colleagues.
