@@ -1,6 +1,6 @@
 ## High Level Steps: 
 ## 1. Read URLs and APIKey
-## 2. Populate data
+## 2. Populate data using Google API
 
 
 #---------------------------------------------------------------------------------------------------------------
@@ -40,21 +40,8 @@ WORKSHEET_CONFIG_CREDENTIALS_INDEX = 1
 RESULTS_SHEET_LAST_COLUMN = "U"
 
 # Name of Google Service Account JSON Keypair File Name
-SERVICE_ACCOUNT_CREDENTIALS_KEYFILE_NAME = "update-googlesheets-python-332d5b434a0b.json"
+SERVICE_ACCOUNT_CREDENTIALS_KEYFILE_NAME = "YOUR-SERVICE-ACCOUNT-JSON-FILE"
 
-# Dictionary to map Fields of AT Activity Details API to GoogleSheet Column indices
-DICT_TARGETAPI_SHEETCOLUMNS_MAPPING = {
-    "id": 0,
-    "name": 1,
-    "type": 2,
-    "state": 3,
-    "priority": 4,
-    "modifiedAt": 5,
-    "start": 6,
-    "end": 7,
-    "thirdPartyId": 8,
-    "workspace": 9
-}
 
 # Constant to define whether logs should be  printed. 
 # Set the value to False if logs are not needed
@@ -89,8 +76,8 @@ def get_page_urls():
     print("x")
 
 
-## Funtion-name: clear_activitiessheet_data
-## This function clears data in activities sheet, leaving only header row
+## Funtion-name: clear_results_sheet_data
+## This function clears data in Results sheet, leaving only header row
 ## Input: googlesheet - googlesheet object
 ## Input: worksheet - worksheet to be cleared
 ## Output: None
@@ -219,19 +206,3 @@ def main(data, context):
 
 if __name__ == "__main__":
     main('data','context')
-
-
-
-
-
-
-
-
-#pageSpeedApiKey = 'AIzaSyAq8iDp6ATQErj2Ut5Kd0qCn7X521tV_1Q';
-#pageSpeedMonitorUrl = 'https://www.vodafone.co.uk/';  
-#strategy = 'desktop'
-#pageurl = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=" + pageSpeedMonitorUrl + '&key=' + pageSpeedApiKey + '&strategy=' + strategy;
-
-
-
-    
